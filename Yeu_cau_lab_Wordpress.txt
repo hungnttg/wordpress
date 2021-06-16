@@ -1,0 +1,305 @@
+Môn Xây dựng trang web2 (xây dựng 1 trang web bằng Wordpress)
+Lịch trình học:
+- 17 buổi
+B1, B3, B5, B7,...,B15: Học lý thuyết (các bạn: xem, nghe)
+B2, B4, B6, ....B16: Thực hành (theo yêu cầu) + Làm bài online
+B17: Làm đề thi thử
+Nộp bài:
+- Nộp 8 Lab (b2,b4,...,16) -> thời hạn: 24h
+- Làm Bài online (8 bài) -> thiếu 1 bài là cấm thi
+			hoan thành > 75% (nghĩa là mỗi bài cần hoàn thành 75%)
+			Nếu không hoàn thành thì làm lại đến khi hoàn thành	
+- Nộp Assignment (có 1 bài Asm nhưng chia làm 3 giai đoạn: 
+	GD1: nộp cùng thời gian bài Lab4
+	GD2: Nộp cùng thời gian bài Lab7
+	GD hoàn thiện: nộp trước khi thi 3 ngày)
+	Cách nộp: Quay video và gửi lên classroom (video từ < 5 phút): quay kết quả làm 	bài HOẶC nộp code
+---
+Bai1 1: Dowwnload va cai dat:
+	1. Xampp -> cai dat va Khoi dong server
+	2. Download Wordpress -> copy vao thu muc C:/xampp/htdocs
+	3. Tao database (tao csdl luu tru du lieu)
+	4. Go localhost/wordpress -> cai dat trang wordpress
+	----
+	Trang quanr tri
+	http://localhost/wordpress/wp-admin/
+	Trang hien thi cho khach hang
+	http://localhost/wordpress/
+	--
+	Backup du lieu:
+	B1- Export database
+	B2 - Copy code
+Bài 2.1: - Thay đổi cấu hình php.ini (c:/xampp/php/php.ini)
+		upload_max_filesize=128M
+		post_max_size=64M
+		max_execution_time=300
+		max_input_time=300
+	Khởi động lại Xampp
+Bài 2.1 - Upload theme cho Wordpress
+	Khởi động lại XAMPP
+	Download theme:
+		http://localhost/wordpress/wp-admin/
+Ly thuyết 3 - 1. Cài đặt theme thương mại điện tử flatsome
+	      2. Chỉnh sửa giao diện UX Theme
+			2 cach: - 1.Edit Page va 2. UX Builder
+		Với UX Buider:
+		* Pages: Default Page là 	
+		— — Classic Shop
+		* Copy Page (download Plugin và Cài đặt)
+			Cái copy sẽ có chữ  — Draft
+		* Xóa page không dùng (site đỡ nặng)
+		* sửa Text trong trang web
+		* thêm dòng
+		* sửa cột
+		* them image, slide
+		=> phục vụ mục đích sửa trang theo ý thích cá nhân, tùy thuộc lĩnh vực 
+kinh doanh.
+		3. Cài đặt trên host (000webhost)
+			b1 - Cài updraft
+			b2- thực hiện backup trên máy tinh cá nhân
+			b3- thực hiện restore trên 000webhost
+			b4- sau khi thực hiện xong sẽ bị lỗi nên cần cấu hình lại
+				- Vào phần quản lý databse
+				- vào phpmyadmin
+				https://databases-auth.000webhost.com/index.php
+				vào bảng wp-option:
+				sửa lại siteurl và home chính xác với trang web của bạn
+			B5- gọi thử trang web
+		4. Thay đổi homepage: Appearance -> Customize -> Homepage Setting
+		Kết quả: có giao diện đã cá nhân hóa
+-------
+Bài 4:
+Phân biệt Page và Post
+Post: -> viết các bài mang tính marketing
+	-dùng cho blog, hiển thị theo thứ tự ngày tháng
+	- cung cấp thông tin cho rss feed (hỗ trợ seo)
+	- Cho phép commment 
+Page: 
+	- các trang có nội dung tĩnh,trang giới thiêu, trang bảo mật,...
+	- Không gắn với ngày tháng -> không có rss feed
+	- Không hỗ trợ comment
+	- Tạo landingpage phục vụ quảng cáo
+
+1. Thêm 1 page và gắn vào menu (trang sản phẩm)
+	a- Thiết kế trang
+	-Thêm paragraph: thêm 1 đoạn văn
+	- Thêm tiêu đề-> seo
+	- Thêm bảng dữ liệu
+	- Thêm hình ảnh
+	- Thêm video	
+	b- Gắn vào menu
+	c- sửa trang vừa tạo bằng UX
+	d- Sửa menu
+2. Tạo 1 post và gắn vào menu (blog)
+	chú ý: nếu copy bài -> cần thay ảnh của các bạn
+3. Thay logo, trang default (trong phần Appearance->HompageSetting)
+4. Xóa và phục hồi
+------
+Bai 5:---------------
+Chú ý: phân biệt host và localhost
+- host (địa chỉ trên internet, tất cả mọi người đều truy cập được) -> làm web trên host , khi tắt máy tính vẫn vào được trang web -> 000webhost.com,..... -> mua 1 host
+-> không cần khởi động XAMPP
+- localhost (địa chỉ trên máy tính của bạn, chỉ mình bạn truy cập được) -> làm trên localhost, khi tắt máy tính ta KHÔNG vào được trang web...
+-> mỗi lần khởi động máy tính, bật XAMPP
+Cách xây dựng 1 trang web, có 2 cách:
+- c1. Làm trên localhost -> backup -> restore lên host (nhanh)
+- c2. Làm trực tiếp trên host (chậm)
+
+==> mục tiêu: đưa trang web lên internet
+host: internet
+localhost: cá nhân
+====--
+- Cài plugin
+	* updraftplus -> hỗ trợ backup dữ liệu
+			Backup trước khi thay đôi dữ liệu -> nếu lỗi thì restore
+	* facebook
+	* phone	
+
+- Backup dữ liệu
+- Tạo các sản phẩm
+https://github.com/hungnttg/wordpress
+B1- Cài đặt plugin -> tính năng riêng của trang web
+B1.1: cài đặt plugin backup dữ liệu -> thường xuyên phải làm
+	Thông thường: chỉ cài 1 lần, sử dụng nhiều lần
+	Khi cài: vào phần plugin
+	Khi sử dụng: vào phần setting
+B1.2- cài đặt facebook
+B1.3-Cài đặt phonering
+B2- Quản lý sản phẩm
+	Vào phần Product:
+	- Xóa hết product hiện có (chỉ để lại 1 sản phẩm)
+	- sửa sản phẩm còn lại:
+		+ Tiêu đề sản phẩm
+		+ Giá sản phẩm
+		+ Chi tiết sản phẩm
+		+ mô tả ngắn về sản phẩm
+		+ thêm category, product tag
+		+ upload hình ảnh sản phẩm
+		+ copy đường link video -> paste vào Media	
+		+ thay đổi sang VND
+B3- Đổi màu: Customize -> style
+----------		
+Bài 6 - Thay đổi giao diện trang web
+B6.1 - Đổi màu chủ đạo của trang web (free-> không cho đổi)
+B6.2 -  Thay đổi footer
+	Có 2 phần footer1+ footer2
+	-> Thay đổi footer2:
+		* vào block-> footer
+		* login-> di chuột vào phần footer
+
+ (Blocks -> About us)(Blocks -> Footer – Newsletter Signup)
+	1. About us
+	- Login
+	- Di chuột lên phần cần thay đổi-> UX builder
+	- Sau khi sửa xong, chọn Apply -> Update
+	-------
+	- Thêm thông tin facebook, instagram hoặc xóa đi nếu không thích
+	2. Signup for newsletter
+		- Thay đổi thông tin
+		- thêm form submit cho người dùng (thu thập email, sdt)
+	3. Lastest news: chỉ cần viết nhiều bài post -> tự động đẩy vào -> không cần sửa
+	4. Tags -> vào phần quản lý tag (products -> tags) và xóa các tag không cần dùng
+		Thêm 1 sản phẩm mới -> thêm tag -> tự động hiển thị ở phần tag
+	5. Sửa menu trên, menu dưới
+		Appearance -> menu -> chọn Secondary menu-> edit
+		Chọn hiển thị hoặc không hiển thị
+B6.3 - Sửa top bar
+	Appearance -> customize -> Header-> Top Bar
+B6.4 - Sửa Widgets (tính năng trong web)
+	Ta có thể thêm, bớt widgets vào:
+	footer1, footer2, sidebar của Product, sidebar Shop
+	Vào phần Appearancr -> widgets
+	Cột bên trái trên: ta có những widgets nào đang hoạt động
+	Cột bên trái dưới: ta có những widgets nào có sẵn nhưng không dùng
+	Cột phải: widget nào đang được áp dụng
+	Chúng ta có thể kéo thả các widget vào những vùng cần thiết
+	Các vùng:
+	Footer 1, footer 2
+	Product Side bar
+	Shop side bar
+--------
+B7.1- Chỉnh sửa header cho Mobile:
+	Flatsome->Theme Option -> Header -> Header Sidebar/Mobile
+B7.2- Thêm mã javascript
+	Thêm mã javascript:Flatsome -> Advanced-> Global Setting
+B7.3: CHỉnh sửa trang Product
+flatsome -> ThemeOption -> SHop-> Product Page ->
+		Global custme tabs align
+		Custome HTML
+B7.4- Cấu hình google map (phải có domain)
+	B1- Lấy APIkey (google cung cấp)
+		1.https://console.cloud.google.com/apis/library?hl=en&pli=1
+		2.Enable API cho Web
+		3. Credentials-> Create Credentials->APIKey-> copy key
+	B2-ThemeOption -> Google APIS
+	B3- paste API Key
+	B4- Dung ban do o cac trang
+	AIzaSyCZpTmRPhG3Z4dQjgn96E0gii1A439EYAI
+B7.5- Cấu hình gửi mail
+	wooCommerce->Setting-> tab Email
+-------------
+Tối ưu cho SEO web
+	Tiêu đề và Meta Description (Home)
+	Tiêu đề và Meta Description (bài viết)
+	ĐƯờng dẫn tĩnh (bitly shorten để tối ưu link)
+	Alt (khi ảnh không hiển thị -> cần hiển thị Text thay thế)
+	H1
+	Sơ đồ website
+	webmaster tool
+B1- Cài đặt Yoast SEO
+B2- Thêm hình ảnh vào bài viết: chú ý viết chi tiết từ khóa cần seo và đưa vào phần Alt
+	picture-> text ->gooogle tìm thấy	
+	- Alt Text -> chứa từ khóa (text thay thế khi không load được ảnh)
+	- Title -> chứa từ khóa
+	- Caption -> chứa từ khóa
+B3- Cấu hình Title và Meta
+	B1. SEO -> Search Appearance
+	Chọn dấu -
+	B2: Khi viết tiêu đề cần chú ý các Tiêu chí title như sau: 
+		- Chứa từ khóa
+		- Không quá dài (khi hiển thị, người dùng cần nhìn thấy hết title)
+		- Các chữ cách nhau bằng 1 dấu cách
+		- Dùng thẻ H1 làm title	
+B4- Seo bằng Yoast SEO:
+	- Title+ Description
+B5- Google XML Sitemap Generator
+B6- Google Analytic -> cung cấp 1 đoạn mã theo dõi-> dán vào wordpress
+	- Đăng ký trang google analytic -> google cho 1 đoạn mã -> copy
+	- Vào Apparance -> Theme Editer -> Hearder.php
+		dán đoạn code theo dõi vào trước thẻ đóng của head 
+		trước chỗ này </head>
+=========>
+1 bài viết cần seo:
+1.domain: mua domain có từ khóa liên quan đến mỹ phẩm
+	myphamabc...
+	mua domain ngắn, không chứa từ khóa cũng ok
+2. Title
+	- Title của site (chứa từ khóa web)
+	VD: mỹ phẩm ABC
+	-> Mỹ phẩm ABC ....
+3. Description:
+	Viết 1 đoạn văn, mỗi dòng nên có từ khóa.
+	Viết tự nhiên, không gò bó, không nhồi nhét từ khóa
+	
+4. Ảnh -> seo dựa vào Alt
+5. Các thẻ
+	Tiêu đề: H1
+	Tiêu đề cấp 1: H2
+	Tiêu đề cấp 3: H3
+	Nội dung nên sử dụng thẻ <p>
+	Đoạn nhấn mạnh: <strong>
+	Tạo backlink: Link đến các trang trước hoặc sau
+	Đầu bài viết: Link đến các trang viết trước
+	Cuối bài viết: Link đến các trang viết sau
+	===> chèn nhiều link-> bị google suspended google search
+6. kỹ thuật giật title
+7. link đến fanpage (là nơi tăng traffic cho website)
+	-> livestream->
+	-> cách tăng: viết nhiều bài (đừng cho tất cả)
+	-> lấy được email, sdt khách hàng
+	-> chèn link website
+=> không dễ -> mất thời gian
+8. chạy quảng cáo (google, facebook)
+	=>khó, tối ưu
+	100 -> 1 người xem
+	100 -> 100 người xem -> tạo cộng đồng trên facebook (group)
+	-> quan trọng: mang lại giá trị cho người dùng
+	-> lập trình: -> tạo các group về lập trinh
+	-> share bài -> câu
+		Hiện đã có bài assignment giai đoạn 2, bạn nào quan tâm thì . 
+		-> không gửi cả link
+	Tiktok: trẻ, hình thể đẹp,...
+	facebook: thụ động (sản phẩm của bạn chưa ai biết đến)
+	google: chủ động (khi người dùng đã biết sản phẩm-> tìm)
+	Chạy quảng cáo: cần có thẻ visa (tín dụng)
+=> quan trọng: 
+	*(Marketing 0 đ)
+	Cộng đồng (vào group lớn của người khác -> câu sang group của mình)
+	Sau khi có group-> livestream trên fanpage -> share vào các group
+	*Marketing mất tiền:
+	*SEO: tile, description, hình ảnh
+---------------------------------------------------------------------------------
+Bài 8:
+B1 - Quản lý người dùng:	User -> Add New
+	1. Tạo user mới -> cung cấp user này cho người dùng -> để viết bài
+B2 - Cài plugin bảo mật:
+	Wordfence Security – Firewall & Malware Scan
+	Điều kiện bảo mật: Phải có tên miền (domain)
+---------
+B3- Mua domain (không yêu cầu, chỉ tham khảo) (tên trang web)
+	https://www.dynadot.com/
+	Register -> login
+	DK: cần có thẻ thanh toán quốc tế (visa)
+	Chú ý: domain chỉ có giá trị trong 1 năm
+	Sang năm thứ 2 cần gia hạn (mua lại) -> giá đắt hơn
+B4: Mua hosting (nơi lưu trữ trang web trên internet)
+	z.com
+	Sau khi mua sẽ có 1 địa chỉ, ví dụ: 45.77.174.219
+B5: Trỏ domain về hosting: để khi gõ tên domain thì nó gọi đến hosting (gọi đến web)
+	maikhanhngoc.com -> gọi về trang web của ngọc
+	Chọn DNS Settings -> new
+	Phần Record Type -> A
+	IP Address -> chọn địa chỉ IP, ví dụ: 45.77.174.219
+B6: Restore website (chỉ dùng khi web lỗi)
+	Điều kiện dùng: đã có bản backup
+	Click vào Tab Restore -> Restore
